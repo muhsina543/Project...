@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background-image: url("https://nddmed.com/_Resources/Persistent/268cdd96d4479a759a858adb8a178f97b3086d32/heart_and_lungs2.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .results h1 {
+            font-size: 24px;
+        }
+
+        .danger {
+            color: red;
+        }
+
+        .warning {
+            color: orange;
+        }
+
+        .caution {
+            color: orange;
+        }
+
+        .safe {
+            color: green;
+        }
+
+        .footer-description {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .gif {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Prediction Result</h2>
+            <p>The predicted stage is: {{ prediction}}</p>
+        <div class="results">
+            {% if prediction == 4 %}
+                <h1><span class="danger">Critical Stage 😢<br><br>Your condition is at Stage 4 of LUNG CANCER.<br><br>Please Consult a Doctor Immediately for Urgent Care.</span></h1>
+                <img class="gif" src="https://example.com/images/stage_4.gif" alt="Stage 4">
+            {% elif prediction == 3 %}
+                <h1><span class="warning">Warning ⚠<br><br>Your condition is at Stage 3 of LUNG CANCER.<br><br>Please Consult a Doctor Soon for Proper Assessment.</span></h1>
+                <img class="gif" src="https://example.com/images/stage_3.gif" alt="Stage 3">
+            {% elif prediction == 2 %}
+                <h1><span class="caution">Caution ⚠<br><br>Your condition is at Stage 2 of LUNG CANCER.<br><br>Consider a Doctor's Visit for Further Examination.</span></h1>
+                <img class="gif" src="https://example.com/images/stage_2.gif" alt="Stage 2">
+            {% elif prediction == 1 %}
+                <h1><span class="safe">Good News! 😊<br><br>Your condition is at Stage 1 of LUNG CANCER.<br><br>Regular Monitoring is Recommended.</span></h1>
+                <img class="gif" src="https://example.com/images/stage_1.gif" alt="Stage 1">
+            {% endif %}
+        </div>
+    </div>
+
+    <p class='footer-description'>©2024 Your Name</p>
+</body>
+</html>

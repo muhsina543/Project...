@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lung Cancer Prediction</title>
+    <style>
+        body {
+            background-image: url("https://th.bing.com/th/id/R.cb92815f89e794c12cc246325b27cb89?rik=ezDpKTYi0TzaTA&riu=http%3a%2f%2fmedimoon.com%2fwp-content%2fuploads%2f2014%2f05%2f1376346690_lung-cancer.jpg&ehk=0pwE%2fbOSospAv%2bm8WuDcHbmDTsp7%2fHo2i0RkH8W4rZk%3d&risl=&pid=ImgRaw&r=0');");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Heading Styling */
+        .container-heading {
+            margin: 0;
+        }
+
+        .heading_font {
+            color: #000000;
+            font-family: 'Pacifico', cursive;
+            font-size: 50px;
+            font-weight: normal;
+        }
+
+        /* Form Input Styles */
+        input, select {
+            border-radius: 10px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 3px;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        /* Footer Description */
+        .footer-description {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class='container-heading'><span class="heading_font">Lung Cancer Prediction</span></h2>
+        <form action="/predict" method="POST">
+            <h3>Age</h3>
+            <input name="Age" placeholder="Enter age in years" required="required">
+            <br>
+            <h3>Gender</h3>
+            <select name="Gender" required="required">
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
+            <br>
+            <h3>Smoking History</h3>
+            <select name="Smoking_History" required="required">
+                <option value="0">Never</option>
+                <option value="1">Former</option>
+                <option value="2">Current</option>
+            </select>
+            <br>
+            <h3>Tumor Size (mm)</h3>
+            <input name="Tumor_Size_mm" placeholder="Enter tumor size in mm" required="required">
+            <br>
+            <h3>Tumor Location</h3>
+            <select name="Tumor_Location" placeholder="Tumor location description" required="required">
+                <option value="0">Lower Lobe</option>
+                <option value="1">MiddleLobe</option>
+                <option value="2">Upper Lobe</option>
+            </select>
+            <br>
+            <h3>Treatment</h3>
+            <select name="Treatment" required="required">
+                <option value="0">None</option>
+                <option value="1">Surgery</option>
+                <option value="2">Chemotherapy</option>
+                <option value="3">Radiotherapy</option>
+            </select>
+            <br>
+            <h3>Family History</h3>
+            <select name="Family_History" required="required">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <br>
+            <h3>Performance Status</h3>
+            <input name="Performance_Status" placeholder="Enter performance status (0-4)" required="required">
+            <br>
+            <h3>Hemoglobin Level</h3>
+            <input name="Hemoglobin_Level" placeholder="Enter hemoglobin level (g/dL)" required="required">
+            <br>
+            <h3>White Blood Cell Count</h3>
+            <input name="White_Blood_Cell_Count" required="required">
+            <br>
+            <h3>Albumin Level</h3>
+            <input name="Albumin_Level" placeholder="Enter albumin level (g/dL)" required="required">
+            <br>
+            <h3>Creatinine Level</h3>
+            <input name="Creatinine_Level" placeholder="Enter creatinine level (mg/dL)" required="required">
+            <br>
+            <h3>LDH Level</h3>
+            <input name="LDH_Level" placeholder="Enter LDH level (U/L)" required="required">
+            <br>
+            <h3>Calcium Level</h3>
+            <input name="Calcium_Level" placeholder="Enter calcium level (mg/dL)" required="required">
+            <br>
+            <h3>Glucose Level</h3>
+            <input name="Glucose_Level" placeholder="Enter glucose level (mg/dL)" required="required">
+            <br>
+            <h3>Potassium Level</h3>
+            <input name="Potassium_Level"  required="required">
+            <br>
+            <h3>Sodium Level</h3>
+            <input name="Sodium_Level"  required="required">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+    <p class='footer-description'>©2024 Your Name</p>
+</body>
+</html>
